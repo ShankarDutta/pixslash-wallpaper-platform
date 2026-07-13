@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeaderMenuButton from "../Buttons/HeaderMenuButton";
+import NavigateButton from "../Buttons/NavigateButton";
 import ThemeToggleButton from "../Buttons/ThemeToggleButton";
-import { buttonVariants } from "../shadcnui/button";
 
 const PublicHeader = () => {
   return (
@@ -44,23 +44,23 @@ const PublicHeader = () => {
             categories
           </Link>
 
-          <Link
-            href="/login"
-            className={buttonVariants({ variant: "ghost", className: "px-3" })}>
+          <NavigateButton
+            buttonVariant="ghost"
+            navigationLink="/login">
             Login
-          </Link>
+          </NavigateButton>
 
-          <Link
-            href="/register"
-            className={buttonVariants({ variant: "default" })}>
+          <NavigateButton
+            buttonVariant="default"
+            navigationLink="/register">
             Register
-          </Link>
+          </NavigateButton>
 
           <ThemeToggleButton className="hidden lg:flex" />
         </nav>
 
         {/* mobile menu toggle  */}
-        <div className="block lg:hidden">
+        <div className="flex items-center lg:hidden">
           <HeaderMenuButton />
         </div>
       </section>
