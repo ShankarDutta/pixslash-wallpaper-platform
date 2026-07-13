@@ -21,7 +21,7 @@ const PublicHeader = () => {
               width={100}
               alt="PixSlash-Logo"
               priority
-              className="h-8 w-full"
+              className="h-8 w-auto"
             />
           </Link>
 
