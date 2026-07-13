@@ -25,7 +25,7 @@ const PublicHeader = () => {
             />
           </Link>
 
-          <ThemeToggleButton classname="flex lg:hidden" />
+          <ThemeToggleButton className="flex lg:hidden" />
         </nav>
 
         {/* navigation routes  */}
@@ -59,7 +59,7 @@ const PublicHeader = () => {
             Register
           </Link>
 
-          <ThemeToggleButton classname="hidden lg:flex" />
+          <ThemeToggleButton className="hidden lg:flex" />
         </nav>
 
         {/* mobile menu toggle  */}
