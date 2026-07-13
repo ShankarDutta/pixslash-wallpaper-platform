@@ -1,6 +1,6 @@
 import { swatches } from "@/lib/homeSwatches";
 
-const HomeFlotingElements = () => {
+const HomeFloatingElements = () => {
   return (
     <div
       className="pointer-events-none absolute inset-0 -z-10 hidden lg:block"
@@ -28,4 +28,4 @@ const HomeFlotingElements = () => {
   );
 };
 
-export default HomeFlotingElements;
+export default HomeFloatingElements;

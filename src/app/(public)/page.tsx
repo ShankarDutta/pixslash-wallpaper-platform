@@ -1,4 +1,4 @@
-import HomeFlotingElements from "@/components/BackgroundUi/HomeFlotingElements";
+import HomeFloatingElements from "@/components/BackgroundUi/HomeFloatingElements";
 import NavigateButton from "@/components/Buttons/NavigateButton";
 import { ArrowUpRightIcon } from "lucide-react";
 import { Metadata } from "next";
@@ -13,7 +13,7 @@ const page = async () => {
   return (
     <section className="grid h-[80dvh] place-items-center px-6">
       {/* floting element bg */}
-      <HomeFlotingElements />
+      <HomeFloatingElements />
 
       <div className="z-10 mx-auto max-w-2xl text-center">
         <span className="border-border/60 bg-muted/40 text-muted-foreground mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium backdrop-blur-sm">
