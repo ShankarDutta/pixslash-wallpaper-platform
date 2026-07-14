@@ -35,6 +35,9 @@ const FieldLogin = ({
                 id={field.name}
                 checked={field.value as boolean}
                 onCheckedChange={field.onChange}
+                aria-describedby={
+                  fieldState.invalid ? `${field.name}-error` : undefined
+                }
               />
               <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
             </div>

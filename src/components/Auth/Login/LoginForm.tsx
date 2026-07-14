@@ -23,7 +23,7 @@ const LoginForm = () => {
       rememberMe: false,
     },
 
-    mode: "onSubmit",
+    mode: "all",
   });
 
   const submitLoginData = (slData: LoginSchemaType) => {
