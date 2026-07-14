@@ -34,7 +34,7 @@ const page = () => {
         </CardContent>
 
         {/* social login buttons  */}
-        <section className="grid grid-cols-2 gap-4 py-3">
+        <section className="grid grid-cols-2 gap-4 px-6 py-3">
           <OAuthButton
             label="Google"
             socialProviders="google"
