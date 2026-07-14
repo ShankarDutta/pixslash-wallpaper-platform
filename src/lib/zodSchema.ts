@@ -7,6 +7,7 @@ export const registerSchema = z
       .trim()
       .min(5, { error: "Name must be at least 5 characters long" })
       .max(32, { error: "Name must not exceed 32 characters" }),
+
     emailAddress: z
       .email({ error: "Please enter a valid  email address." })
       .trim()

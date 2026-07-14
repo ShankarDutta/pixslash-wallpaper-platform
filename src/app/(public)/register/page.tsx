@@ -1,4 +1,4 @@
-import RegisterForm from "@/components/Auth/RegisterForm";
+import RegisterForm from "@/components/Auth/Register/RegisterForm";
 import NavigateButton from "@/components/Buttons/NavigateButton";
 import {
   Card,
