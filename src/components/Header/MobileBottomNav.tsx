@@ -21,7 +21,8 @@ type PublicNavItemsType = {
 const MobileBottomNav = () => {
   return (
     <nav
-      className="fixed bottom-0 mx-auto block w-full bg-black/4 py-3 backdrop-blur-md lg:hidden dark:bg-white/4"
+      className="fixed right-0 bottom-0 left-0 mx-auto block w-full bg-black/4 py-3 backdrop-blur-md lg:hidden dark:bg-white/4"
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       aria-label="mobile-bottom-navigation">
       <PublicBottomNav />
     </nav>
