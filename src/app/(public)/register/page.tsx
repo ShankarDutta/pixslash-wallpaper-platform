@@ -40,10 +40,10 @@ const page = () => {
         <CardFooter>
           {/* additonal link  */}
           <CardDescription className="mx-auto">
-            Already have an account?
+            Already have an account? &nbsp;
             <NavigateButton
               navigationLink={"/login"}
-              className="h-0"
+              className="h-0 w-0"
               buttonVariant="link">
               Login
             </NavigateButton>
