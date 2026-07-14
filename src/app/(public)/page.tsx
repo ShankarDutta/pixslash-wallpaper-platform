@@ -38,7 +38,7 @@ const page = () => {
         </p>
 
         {/* cta buttons  */}
-        <div className="mt-4 space-y-2 md:flex md:items-center md:justify-center md:gap-4">
+        <div className="mt-4 space-y-2 md:flex md:items-center md:justify-center md:gap-4 md:space-y-0">
           <NavigateButton
             className="group hover:bg-black dark:bg-white"
             buttonVariant="default"
