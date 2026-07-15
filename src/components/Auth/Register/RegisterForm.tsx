@@ -29,7 +29,7 @@ const RegisterForm = () => {
       confirmPassword: "",
     },
 
-    mode: "onSubmit",
+    mode: "all",
   });
 
   const submitRegisterData = async ({
