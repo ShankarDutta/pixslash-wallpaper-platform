@@ -12,9 +12,9 @@ export const serverEnv = createEnv({
 
     BETTER_AUTH_SECRET: z
       .string()
-      .min(32, { error: "  BETTER_AUTH_SECRET is required" }),
+      .min(32, { error: "BETTER_AUTH_SECRET must be at least 32 characters" }),
 
-    BETTER_AUTH_URL: z.url({ error: "BETTER_AUTH_URL is required" }),
+    BETTER_AUTH_URL: z.url({ error: "BETTER_AUTH_URL must be a valid URL" }),
 
     CHECKPOINT_DISABLE: z.enum(["1", "0"]).optional(),
 
@@ -35,6 +35,12 @@ export const serverEnv = createEnv({
     FACEBOOK_CLIENT_SECRET: z
       .string()
       .min(1, { error: "FACEBOOK_CLIENT_SECRET is required" }),
+
+    PASSWORD_HASH_SECRET: z
+      .string()
+      .min(32, {
+        error: "PASSWORD_HASH_SECRET must be at least 32 characters",
+      }),
   },
   experimental__runtimeEnv: process.env,
 });

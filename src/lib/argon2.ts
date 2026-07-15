@@ -8,7 +8,10 @@ type VerifyPasswordType = {
 
 export const hashPassword = async (password: string) => {
   const hashedPassword = await argon2Hash(password, {
-    secret: Buffer.from(serverEnv.BETTER_AUTH_SECRET),
+    secret: Buffer.from(serverEnv.PASSWORD_HASH_SECRET),
+    memoryCost: 19456, // ~19 MB RAM
+    timeCost: 2, // 2 rounds
+    parallelism: 1, // 1 CPU thread
   });
 
   return hashedPassword;
@@ -19,7 +22,7 @@ export const verifyPassword = async ({
   password,
 }: VerifyPasswordType) => {
   const verifiedPassword = await argon2Verify(hash, password, {
-    secret: Buffer.from(serverEnv.BETTER_AUTH_SECRET),
+    secret: Buffer.from(serverEnv.PASSWORD_HASH_SECRET),
   });
 
   return verifiedPassword;
