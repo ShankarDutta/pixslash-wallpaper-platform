@@ -21,7 +21,7 @@ import { Separator } from "../shadcnui/separator";
 import { SidebarTrigger } from "../shadcnui/sidebar";
 import { Skeleton } from "../shadcnui/skeleton";
 
-const PrivetHeader = () => {
+const PrivateHeader = () => {
   const { push } = useRouter();
   const { data, isPending } = authClient.useSession();
   const user = data?.user;
@@ -101,4 +101,4 @@ const PrivetHeader = () => {
   );
 };
 
-export default PrivetHeader;
+export default PrivateHeader;
