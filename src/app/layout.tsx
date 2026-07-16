@@ -1,5 +1,4 @@
 import MobileBottomNav from "@/components/Header/MobileBottomNav";
-import PublicHeader from "@/components/Header/PublicHeader";
 import ThemeProvider from "@/components/Providers/ThemeProvider";
 import { TooltipProvider } from "@/components/shadcnui/tooltip";
 import { notoSansHeading, nunitoSans } from "@/lib/fonts";
@@ -23,10 +22,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
           attribute={"class"}
           defaultTheme="dark"
           enableSystem={false}>
-          <PublicHeader />
-          <TooltipProvider>
-            <main className="mx-auto max-w-7xl pb-16 lg:pb-0">{children}</main>
-          </TooltipProvider>
+          <TooltipProvider>{children}</TooltipProvider>
           <MobileBottomNav />
         </ThemeProvider>
       </body>

@@ -1,3 +1,5 @@
+"use client";
+
 import { authClient } from "@/lib/auth-client";
 import { ChevronDownIcon, UserIcon } from "lucide-react";
 import Image from "next/image";
