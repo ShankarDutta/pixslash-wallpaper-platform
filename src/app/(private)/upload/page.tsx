@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 
 const page = async () => {
   const getCategories = await prisma.category.findMany();
-  console.log(getCategories);
 
   return (
     <section className="grid h-auto px-4 py-4 md:place-items-center md:px-0 md:py-4">

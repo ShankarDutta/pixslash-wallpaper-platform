@@ -2,12 +2,15 @@
 
 import { WallpaperUploadSchemaType } from "@/lib/type";
 import { wallpaperUploadSchema } from "@/lib/zodSchema";
+import wallpaperUploadAction from "@/server/wallpaperUploadAction";
 import { Category } from "@generated/prisma/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FolderIcon, ImagePlusIcon, ShieldCheckIcon } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { useFilePicker } from "use-file-picker";
 import { Button } from "../shadcnui/button";
 import {
@@ -35,6 +38,7 @@ type WalllpaperUploadFormType = {
 const WalllpaperUploadForm = ({ categoryInfo }: WalllpaperUploadFormType) => {
   const [isFile, setFile] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { refresh } = useRouter();
 
   const {
     handleSubmit,
@@ -62,8 +66,33 @@ const WalllpaperUploadForm = ({ categoryInfo }: WalllpaperUploadFormType) => {
   });
 
   // submit function
-  const submitWallpaper = (sw: WallpaperUploadSchemaType) => {
-    console.log(sw);
+  const submitWallpaper = async ({
+    title,
+    category,
+  }: WallpaperUploadSchemaType) => {
+    if (plainFiles.length === 0) {
+      return toast.error("Please select an image to upload.");
+    }
+
+    const formData = new FormData();
+
+    // Image
+    formData.append("image", plainFiles[0]);
+
+    // Other fields
+    formData.append("title", title);
+    formData.append("category", category);
+
+    const { isSuccess, message } = await wallpaperUploadAction(formData);
+
+    if (!isSuccess) {
+      toast.error(message);
+    } else {
+      toast.success(message);
+      reset();
+      clear();
+      refresh();
+    }
   };
 
   // cancel function
