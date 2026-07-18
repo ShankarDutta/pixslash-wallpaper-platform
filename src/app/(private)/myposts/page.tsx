@@ -1,3 +1,4 @@
+import NavigateButton from "@/components/Buttons/NavigateButton";
 import MasonryGrid from "@/components/Cards/MasonryGrid";
 import { buttonVariants } from "@/components/shadcnui/button";
 import { Card, CardDescription, CardTitle } from "@/components/shadcnui/card";
@@ -25,11 +26,11 @@ const page = async () => {
           </p>
         </div>
 
-        <Link
-          href={"/upload"}
-          className={buttonVariants({ variant: "default" })}>
+        <NavigateButton
+          navigationLink={"/upload"}
+          buttonVariant="default">
           Upload
-        </Link>
+        </NavigateButton>
       </div>
 
       {getOwnPost.length === 0 && (
