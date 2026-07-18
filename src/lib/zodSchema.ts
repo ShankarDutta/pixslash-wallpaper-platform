@@ -38,3 +38,13 @@ export const loginSchema = z.object({
     .max(128, { error: "password must not exceed 128 characters" }),
   rememberMe: z.boolean(),
 });
+
+export const wallpaperUploadSchema = z.object({
+  title: z.string().trim().min(5, {
+    error: "Title must be at least 5 characters",
+  }),
+
+  category: z.string().min(1, {
+    error: "Please choose your wallpaper category",
+  }),
+});

@@ -91,7 +91,6 @@ model Wallpaper {
   id           String   @id @default(uuid())
   slug         String   @unique
   title        String
-  description  String
   thumbnailUrl String?
   imageUrl     String
   width        Int?

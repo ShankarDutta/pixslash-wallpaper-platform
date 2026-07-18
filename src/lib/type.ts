@@ -1,7 +1,11 @@
 import { LucideIcon } from "lucide-react";
 import { ReactNode } from "react";
 import z from "zod";
-import { loginSchema, registerSchema } from "./zodSchema";
+import {
+  loginSchema,
+  registerSchema,
+  wallpaperUploadSchema,
+} from "./zodSchema";
 
 export type RootLayoutProps = Readonly<{
   children: ReactNode;
@@ -24,6 +28,8 @@ export type Swatch = {
 export type RegisterSchemaType = z.infer<typeof registerSchema>;
 
 export type LoginSchemaType = z.infer<typeof loginSchema>;
+
+export type WallpaperUploadSchemaType = z.infer<typeof wallpaperUploadSchema>;
 
 export type SideBarNavItemType = {
   label: string;
